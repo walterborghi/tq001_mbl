@@ -20,7 +20,7 @@
     "react-native-cookies": "^3.3.0",
     "react-native-device-size": "^0.1.0",
     "react-native-slider": "^0.11.0",
-    "react-native-snap-carousel": "^3.7.2",
+    "react-native-snap-carousel": "^3.7.5",
     "react-native-swipeable": "^0.6.0",
     "react-native-swipeout": "^2.3.6",
     "react-native-swiper": "^1.5.13",
@@ -29,7 +29,8 @@
     "react-navigation": "^1.5.8",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.1.3"
   },
   "devDependencies": {
     "babel-jest": "22.4.3",

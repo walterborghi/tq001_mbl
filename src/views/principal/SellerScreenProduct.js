@@ -17,7 +17,7 @@ const self = null;
 const getData = null;
 const getProcesso = null;
 
-class ScreenHome extends Component {
+class SellerScreenProduct extends Component {
   
   constructor(props) {
     super(props);    
@@ -159,4 +159,4 @@ const mapStateToProps = state => (
   }
 )
 
-export default connect(mapStateToProps, { getData, getProcesso })(ScreenHome);
+export default connect(mapStateToProps, { getData, getProcesso })(SellerScreenProduct);

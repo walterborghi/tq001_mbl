@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import stylesL from './stylesL';
-//import Comp_ItemMeusProcs  from './NotUsed/Comp_ItemMeusProcs';
+//import CompSellItem  from './CompSellItem';
 
 const window = Dimensions.get('window');
 const self = null;
@@ -20,7 +20,7 @@ const getData = null;
 const setSelectedCobranca = null;
 
 
-class ScreenMeusProcessos extends Component {
+class HomeSeller extends Component {
   
   constructor(props) {
     super(props);    
@@ -69,4 +69,4 @@ const mapStateToProps = state => (
   }
 )
 
-export default connect(mapStateToProps, { getData, setSelectedCobranca })(ScreenMeusProcessos);
+export default connect(mapStateToProps, { getData, setSelectedCobranca })(HomeSeller);

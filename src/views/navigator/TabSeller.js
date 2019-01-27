@@ -2,8 +2,8 @@ import React, { Component, } from 'react'
 import { View, Dimensions, Image } from 'react-native'
 import { TabNavigator } from 'react-navigation';
 
-import ScreenHome from '../principal/ScreenHome';
-import ScreenProcess from '../principal/ScreenMeusProcessos';
+import SellerScreenProduct from '../principal/SellerScreenProduct';
+import SellerScreenService from '../principal/SellerScreenService';
 
 const ImgHomeOn = require('../../components/images/tabbar_home_on3x.png');
 const ImgHomeOff = require('../../components/images/tabbar_home_off3x.png');
@@ -24,8 +24,8 @@ const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
 const TabSeller = TabNavigator({
-  ScreenHome: { 
-    screen: ScreenHome, 
+  SellerScreenProduct: { 
+    screen: SellerScreenProduct, 
     navigationOptions: {
       showLabel: true,
       showIcon: true,
@@ -43,8 +43,8 @@ const TabSeller = TabNavigator({
       />   
     }
   },
-  ScreenProcess: { 
-    screen: ScreenProcess, 
+  SellerScreenService: { 
+    screen: SellerScreenService, 
     navigationOptions: {
       showLabel: true,
       showIcon: true,

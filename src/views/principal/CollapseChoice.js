@@ -39,61 +39,21 @@ export default class ChoiceProfile extends Component {
         self = this;    
     }
     
-    ShowHideSellTextComponentView = () => {        
-        
-        if(this.state.isHiddenSell == false)
-        {
-            this.setState({isHiddenBuy: true});
-            this.setState({isHiddenSell: true});  
-            this.setState({ valueOperation: '0' });          
-        }
-        else
-        {
-            this.setState({ valueOperation: 'sp' });
-            this.setState({isHiddenBuy: true});
-            this.setState({isHiddenSell: false});
-        }
+    GoToSellComponentView = () => {        
+
+        self.props.navigation.navigate(
+            'TabSeller', { user_id : 1 }
+        );        
     }
 
-    ShowHideBuyTextComponentView = () => {        
-        
-        if(this.state.isHiddenBuy == false)
-        {            
-            this.setState({isHiddenSell: true});            
-            this.setState({isHiddenBuy: true});
-            this.setState({ valueOperation: '0' });                      
-        }
-        else
-        {            
-            this.setState({ valueOperation: 'bp' });
-            this.setState({isHiddenSell: true})            
-            this.setState({isHiddenBuy: false})
-        }
+    GoToBuyComponentView = () => {        
+
+        self.props.navigation.navigate(
+            'TabBuyer', { user_id : 1 }
+          );
     }
 
-    GoToAnotherScene = () => {
-        if( this.state.valueOperation == '0') {
-            alert('Informe se deseja vender ou comprar Produtos ou Serviços.');
-        } else {            
-            
-            
-            if(this.state.valueOperation.substr(0, 1) == 'b'){
-                alert('comprar');
-                self.props.navigation.navigate(
-                    'TabBuyer', { user_id : 1 }
-                  );
-            } else {
-                self.props.navigation.navigate(
-                    'TabSeller', { user_id : 1 }
-                  );
-            }
-        
-
-            
-        }
-
-    }
-
+    
     render() {
         let { fadeAnim } = this.state;
 
@@ -104,7 +64,7 @@ export default class ChoiceProfile extends Component {
                     <View style={{ flex: 1, marginTop: 15  }}>                    
                         <View style={Styles.blueColumn}>
                             <TouchableOpacity
-                                onPress={this.ShowHideSellTextComponentView} 
+                                onPress={this.GoToSellComponentView} 
                             >
                                 <Image 
                                     source={btnSell}
@@ -113,54 +73,15 @@ export default class ChoiceProfile extends Component {
                         </View>                        
                         <View style={Styles.greenColumn}>
                             <TouchableOpacity
-                                onPress={this.ShowHideBuyTextComponentView} 
+                                onPress={this.GoToBuyComponentView} 
                             >
                                 <Image 
                                     source={btnBuy} 
                                     style= {Styles.imageBlock} />
                             </TouchableOpacity>
                         </View>                        
-                        {
-                            !this.state.isHiddenSell ?                             
-                                <SwitchSelector
-                                    initial={0}
-                                    onPress={value => this.setState({ valueOperation: value })}
-                                    textColor='#1919f9'
-                                    selectedColor='#FFF'
-                                    buttonColor='#1919f9'                                                      
-                                    bold = 'true'                                          
-                                    style={{ width: '110%', alignSelf: 'center', marginTop: 10 }}                                
-                                    options={[
-                                        { label: 'Produto', value: 'sp'}, //venda-produto
-                                        { label: 'Serviço', value: 'ss'}  //venda-serviço
-                                    ]} /> : null                                                                
-                        }
-                        {
-                            !this.state.isHiddenBuy ?                             
-                            <SwitchSelector
-                                initial={0}
-                                onPress={value => this.setState({ valueOperation: value })}
-                                textColor='#f3720a'
-                                selectedColor='#FFF'
-                                buttonColor='#f3720a'                                                      
-                                bold = 'true'                                          
-                                style={{ width: '110%', alignSelf: 'center', marginTop: 10 }}                                
-                                options={[
-                                    { label: 'Produto', value: 'bp'}, //compra-produto
-                                    { label: 'Serviço', value: 'bs'}  //compra-serviço
-                                ]} /> : null 
-                        }
                     </View>                                        
-                </ScrollView>                  
-                <View style={Styles.footer}>                 
-                        <View style={Styles.containerDown}>                
-                        <TouchableOpacity                        
-                        onPress={this.GoToAnotherScene} 
-                        >
-                            <Text style={Styles.textAdress}>  PROSSEGUIR </Text>
-                            </TouchableOpacity>
-                        </View>                                  
-                </View> 
+                </ScrollView>                                 
             </ImageBackground>                
         );
     }
@@ -182,7 +103,8 @@ const Styles = StyleSheet.create({
     blueColumn: {
         alignItems: 'center',          
           justifyContent: 'center',
-          height: Dimensions.get('window').height / 3
+          height: Dimensions.get('window').height / 3,
+          marginTop: Dimensions.get('window').height / 13
     },      
     greenColumn: {
         alignItems: 'center',        
