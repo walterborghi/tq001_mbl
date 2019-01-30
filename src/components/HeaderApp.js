@@ -2,7 +2,7 @@ import React from "react";
 import { View, Platform, StyleSheet, TouchableOpacity, Image } from "react-native";
 //import LinearGradient from "react-native-linear-gradient";
 
-const logoSmall = require('./images/smallWhiteLogo.png');
+const logoSmall = require('../../images/smallWhiteLogo.png');
 
 const HeaderApp = props => {
 

@@ -12,9 +12,9 @@ import {
 import SwitchSelector from 'react-native-switch-selector';
 import HeaderApp from '../../components/HeaderApp';
 
-const bkApp = require('../../components/images/backgroundApp.png');
-const btnBuy = require('../../components/images/btnChoiceBuy.png');
-const btnSell = require('../../components/images/btnChoiceSell.png');
+const bkApp = require('../../../images/backgroundApp.png');
+const btnBuy = require('../../../images/btnChoiceBuy.png');
+const btnSell = require('../../../images/btnChoiceSell.png');
 const ImgHeight = Dimensions.get('window').height;
 const ImgWidth = Dimensions.get('window').width;
 

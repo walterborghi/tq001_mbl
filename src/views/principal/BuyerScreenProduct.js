@@ -7,14 +7,18 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
-  TextInput
+  TextInput,
+  ImageBackground
 } from 'react-native';
 import { connect } from 'react-redux';
 import Carousel  from 'react-native-snap-carousel';
 import stylesL from './stylesL';
 import CompSellItem  from './CompSellItem';
+const bkApp = require('../../../images/backgroundApp.png');
 
 const window = Dimensions.get('window');
+const ImgHeight = Dimensions.get('window').height;
+const ImgWidth = Dimensions.get('window').width;
 const self = null;
 
 class BuyerScreenProduct extends Component {
@@ -87,6 +91,20 @@ class BuyerScreenProduct extends Component {
           resumo: "Fubá e mais",
           logo: ""
         },
+        {
+          id: '8',
+          local: "Batata Doce & Cia do 11X",
+          classf: 3,
+          resumo: "Marmitas Fit",
+          logo: ""
+        },
+        {
+          id: '10',
+          local: "Gorduramas do 13C",
+          classf: 2,
+          resumo: "Lanches gordurentos e suculentos",
+          logo: ""
+        },
       ]
     };
     console.log("ThumbnailCarousel Props: ", this.props)
@@ -143,8 +161,8 @@ class BuyerScreenProduct extends Component {
       else
       {
           return (
-            <View style={{ flex: 1}}>
-              <View style={styles.CarouselBackgroundView}>
+            <ImageBackground source={bkApp} style={{ width: ImgWidth, height: ImgHeight}}>
+              <View style={styles.CarouselBackgroundView}>                
                 <Carousel
                   ref={ (c) => { this._carousel = c; } }
                   data={this.state.videos}
@@ -156,13 +174,12 @@ class BuyerScreenProduct extends Component {
                   firstItem={1}
                 />
               </View>
-              <View style={{ width: '100%', marginTop: 20, backgroundColor: '#e2d4d4' }}>
+              <View style={{ width: '100%', marginTop: 20, backgroundColor: '#e6b33e' }}>
                 <Text style={{ marginLeft: 10, fontSize: 16, color: 'black' }}>Locais de Venda</Text>              
               </View>
               <View style={styles.containerList}>
-                  <View style={{ flex: 1 }}>
+                  <View style={{ height: 300, marginTop: 5 }}>
                       <FlatList 
-                      style={{flex: 1,}}
                       data = {this.state.locals}
                       refreshing={false}
                       //ListHeaderComponent={this._renderItemProcesso()}
@@ -172,7 +189,7 @@ class BuyerScreenProduct extends Component {
                       />
                   </View>
               </View>
-            </View>
+            </ImageBackground>
           );        
       }
     
@@ -186,8 +203,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginLeft: 1
   },
-  containerList: {
-    flex: 8,
+  containerList: {    
     marginTop: 10,
     justifyContent: 'center',
     alignItems: 'center'
@@ -218,8 +234,9 @@ const styles = StyleSheet.create({
 
 
   CarouselBackgroundView : {
-    backgroundColor: '#e2d4d4',
-    height: 120,
+    marginTop: 5,
+    backgroundColor: 'transparent',
+    height: 100,
     width: window.width
   },
   VideoTitleText : {
@@ -228,10 +245,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   CurrentVideoImage: {
-    top: 25,
+    top: 0,
     width: 156,
     height: 114,
-    borderRadius: 5
+    borderRadius: 30
   },
   ThumbnailBackgroundView: {
     justifyContent: 'center',

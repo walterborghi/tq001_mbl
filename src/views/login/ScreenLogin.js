@@ -21,8 +21,8 @@ import deviceSize from 'react-native-device-size';
 
 const ImgHeight = Dimensions.get('window').height;
 const ImgWidth = Dimensions.get('window').width;
-const bkLogin = require('../../components/images/background_login.png');
-const btnLogin = require('../../components/images/btnLogin.png');
+const bkLogin = require('../../../images/background_login.png');
+const btnLogin = require('../../../images/btnLogin.png');
 
 let self = null;
 

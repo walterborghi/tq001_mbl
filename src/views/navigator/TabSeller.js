@@ -5,17 +5,17 @@ import { TabNavigator } from 'react-navigation';
 import SellerScreenProduct from '../principal/SellerScreenProduct';
 import SellerScreenService from '../principal/SellerScreenService';
 
-const ImgHomeOn = require('../../components/images/tabbar_home_on3x.png');
-const ImgHomeOff = require('../../components/images/tabbar_home_off3x.png');
+const ImgHomeOn = require('../../../images/tabbar_home_on3x.png');
+const ImgHomeOff = require('../../../images/tabbar_home_off3x.png');
 
-const ImgProcessOn = require('../../components/images/tabbar_historico_on3x.png');
-const ImgProcessOff = require('../../components/images/tabbar_historico_off3x.png');
+const ImgProcessOn = require('../../../images/tabbar_historico_on3x.png');
+const ImgProcessOff = require('../../../images/tabbar_historico_off3x.png');
 
-const ImgPublicsOn = require('../../components/images/tabbar_debitos_on3x.png');
-const ImgPublicsOff = require('../../components/images/tabbar_debitos_off3x.png');
+const ImgPublicsOn = require('../../../images/tabbar_debitos_on3x.png');
+const ImgPublicsOff = require('../../../images/tabbar_debitos_off3x.png');
 
-const ImgAccountOn = require('../../components/images/tabbar_conta_on3x.png');
-const ImgAccountOff = require('../../components/images/tabbar_conta_off3x.png');
+const ImgAccountOn = require('../../../images/tabbar_conta_on3x.png');
+const ImgAccountOff = require('../../../images/tabbar_conta_off3x.png');
 
 
 
